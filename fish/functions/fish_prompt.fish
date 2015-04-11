@@ -1,5 +1,5 @@
 function fish_prompt
-	
+
 	echo -n (set_color ff00ff)"\\\\\\ "(set_color $fish_color_normal)
 	echo -n (whoami) # print username
 	# echo -n "@"(set_color $fish_color_normal)(uname -n|cut -d . -f 1) # print hostname
@@ -10,6 +10,16 @@ function fish_prompt
 	if test (pwd) != "/"
 		echo -n "/"
 	end
+
+	parse_git_branch
+
+
+
+
+
+# NEWLINE
+
+
 
 	echo -n \n
 

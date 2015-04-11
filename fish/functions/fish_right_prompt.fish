@@ -1,3 +1,11 @@
 function fish_right_prompt
-	printf (date "+$c2%H$c0:$c2%M$c0 ")
+	set_color green
+
+	if test -d .git
+		echo " ± git "
+	end
+	if test -d node_modules
+		echo " 😎 node "
+	end
+	
 end
