@@ -1,8 +1,9 @@
 - defaults:
-  link:
-    relink: true
+    link:
+        relink: true
   
 - clean: ['~']
 
 - link:
-  ~/.config/fish/config.fish: fish/config.fish
+    ~/.config/fish/config.fish: fish/config.fish
+    ~/.config/fish/functions: fish/functions
