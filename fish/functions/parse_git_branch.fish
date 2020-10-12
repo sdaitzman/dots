@@ -1,15 +1,19 @@
 function parse_git_branch
 		if test -d .git
+			printf ' -> %s' (set_color normal)
+
+			printf '%s(' (set_color ff00ff)
+
 			# uses simple grep and colrm instead of complicated sed regex
-			set -l branch (git branch 2> /dev/null | grep --color=never -e '*.\(.*\)' | colrm 1 2)
+			set -l branch (git rev-parse --abbrev-ref HEAD)
 			
 			# use git status to improve performance (instead of using diff)
 			set -l git_status (git status -s | head -n 1)
 			
 			if test -n "$git_status"
-				printf ' (%s%s' (set_color $fish_git_dirty_color) $branch
+				printf '%s%s' (set_color $fish_git_dirty_color) $branch
 			else
-				printf ' (%s%s' (set_color $fish_git_not_dirty_color) $branch
+				printf '%s%s' (set_color $fish_git_not_dirty_color) $branch
 					
 				set -l git_status_origin (git status -s -b | head -n 1)
 				set -l ahead (echo $git_status_origin | grep --color=never -e '\[.*ahead.*\]')
@@ -27,6 +31,7 @@ function parse_git_branch
 				end
 			end
 	 
-			printf '%s) ' (set_color normal)
+			printf '%s)' (set_color ff00ff)
+			printf ' %s' (set_color normal)
 		end
 	end
