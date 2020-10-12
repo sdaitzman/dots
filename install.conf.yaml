@@ -11,4 +11,15 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [if ! command -v "brew" &> /dev/null; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"; fi]
+    -
+        command: bash -c 'if ! command -v "curl" &> /dev/null; then sudo apt install -y curl; fi'
+        description: Installing curl if needed
+        stdin: true
+        stdout: true
+        stderr: true
+    -
+        command: bash -c 'if ! command -v "brew" &> /dev/null; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"; fi'
+        description: Installing HomeBrew if needed
+        stdin: true
+        stdout: true
+        stderr: true
