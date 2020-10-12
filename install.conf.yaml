@@ -24,8 +24,8 @@
         stdout: true
         stderr: true
     -
-        command: bash -c 'if command -v "apt" &> /dev/null; then sudo apt install -y build-essential fish nodejs npm vim htop; fi'
-        description: Installing Debian packages if on a Debianish OS
+        command: bash -c 'if command -v "apt" &> /dev/null; then sudo apt install -y build-essential fish nodejs npm vim htop git; fi; sudo ln -s /home/linuxbrew/.linuxbrew/bin/brew /usr/local/bin/brew'
+        description: Installing Debian packages and linking Homebrew if on a Debian-ish OS
         stdin: true
         stdout: true
         stderr: true
