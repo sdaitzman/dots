@@ -7,3 +7,7 @@
 - link:
     ~/.config/fish/config.fish: fish/config.fish
     ~/.config/fish/functions: fish/functions
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [if ! command -v "brew" &> /dev/null; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"; fi]
