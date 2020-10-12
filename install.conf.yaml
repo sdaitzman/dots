@@ -19,7 +19,13 @@
         stderr: true
     -
         command: bash -c 'if ! command -v "brew" &> /dev/null; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"; fi'
-        description: Installing HomeBrew if needed
+        description: Installing Homebrew if needed
+        stdin: true
+        stdout: true
+        stderr: true
+    -
+        command: bash -c 'if command -v "apt" &> /dev/null; then sudo apt install -y build-essential fish nodejs npm vim htop; fi'
+        description: Installing Debian packages if on a Debianish OS
         stdin: true
         stdout: true
         stderr: true
