@@ -1,6 +1,6 @@
-sdaitz-utils
+👩🏻‍💻 Sam Daitzman's dotfiles
 ============
 
-My utilities and tools and scripts and stuff
+These are my dotfiles. `./install` to do that!
 
-Alfred workflows I made, icons I designed, fish configuration, etc. Use as you like!
+(Dotfiles are codified configuration and setup processes to get a computer ready for use with the tools and configs I like to use).
