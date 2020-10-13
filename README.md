@@ -1,4 +1,4 @@
-👩🏻‍💻 Sam Daitzman's dotfiles
+·········👩🏻‍💻········· Sam Daitzman's dotfiles
 ============
 
 These are my dotfiles. `./install` to do that!
